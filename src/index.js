@@ -26,6 +26,7 @@ class Test extends React.Component {
     super(props);
     this.state = {
       age: 0,
+      show: true,
     };
   }
   render() {
@@ -35,7 +36,10 @@ class Test extends React.Component {
           AGe{" "}
         </button>
         <p>{this.state.age}</p>
-        <Mai age={this.state.age} />;
+        <button onClick={() => this.setState({ show: !this.state.show })}>
+          Hide/show
+        </button>
+        {this.state.show ? <Mai age={this.state.age} /> : <></>}
       </>
     );
   }

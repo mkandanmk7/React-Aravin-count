@@ -10,6 +10,9 @@ class Mai extends React.Component {
       age: 34,
     };
   }
+  shouldComponentUpdate() {
+    return true;
+  }
   componentDidMount() {
     console.log("Mounted Api done");
   }
