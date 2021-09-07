@@ -21,4 +21,24 @@ import ReactDOM from "react-dom";
 
 import Mai from "./App";
 
-ReactDOM.render(<Mai />, document.getElementById("root"));
+class Test extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      age: 0,
+    };
+  }
+  render() {
+    return (
+      <>
+        <button onClick={() => this.setState({ age: this.state.age + 1 })}>
+          AGe{" "}
+        </button>
+        <p>{this.state.age}</p>
+        <Mai age={this.state.age} />;
+      </>
+    );
+  }
+}
+
+ReactDOM.render(<Test />, document.getElementById("root"));

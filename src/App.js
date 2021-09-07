@@ -21,6 +21,10 @@ class Mai extends React.Component {
     if (prevS.name !== this.state.name) {
       console.log(this.state.name);
     }
+    console.log(prevP.age);
+    if (prevP.age !== this.props.age) {
+      console.log("valueChages", prevP.age, this.props.age);
+    }
   }
 
   // increment = () => {
@@ -47,6 +51,7 @@ class Mai extends React.Component {
 
   render() {
     console.log("render done");
+    console.log(this.props);
     return (
       <>
         <p>Count: {this.state.count}</p>
@@ -59,6 +64,9 @@ class Mai extends React.Component {
         <br></br>
         <br></br>
         <button onClick={() => this.counterApp("reset")}>Reset</button>
+        <br></br>
+        <button onClick={() => this.forceUpdate()}>ForceUpdate</button>
+        {/* it will call render again  */}
       </>
     );
   }
